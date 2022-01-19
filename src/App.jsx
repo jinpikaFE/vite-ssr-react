@@ -1,4 +1,4 @@
-import './App.css'
+import styles from './App.module.css'
 import React, { useState } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import logo from './logo.svg'
@@ -9,9 +9,9 @@ export default function App({ isClient, url, router, request }) {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className={styles.appLogo} alt="logo" />
         <p>Hello ViteSSR + React!</p>
         <p>
           <button onClick={() => setCount((count) => count + 1)}>

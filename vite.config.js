@@ -1,7 +1,8 @@
-const { defineConfig } = require('vite')
-const react = require('@vitejs/plugin-react')
-const viteSSR = require('vite-ssr/plugin')
-const api = require('./node-server/api')
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import viteSSR from 'vite-ssr/plugin';
+import api from './node-server/api';
+import path from 'path';
 
 module.exports = defineConfig({
   server: {
@@ -26,8 +27,36 @@ module.exports = defineConfig({
     {
       // Mock API during development
       configureServer({ middlewares }) {
-        api.forEach(({ route, handler }) => middlewares.use(route, handler))
+        api.forEach(({ route, handler }) => middlewares.use(route, handler));
       },
     },
   ],
-})
+  resolve: {
+    extensions: [
+      '.mjs',
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.json',
+      '.sass',
+      '.scss',
+    ], // 忽略输入的扩展名
+    alias: [
+      { find: /^~/, replacement: '' },
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+      {
+        find: '@components',
+        replacement: path.resolve(__dirname, 'src/components'),
+      },
+      { find: '@config', replacement: path.resolve(__dirname, 'config') },
+    ],
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+      },
+    },
+  },
+});

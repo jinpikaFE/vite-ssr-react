@@ -1,5 +1,5 @@
-import React from 'react'
-import { Helmet } from 'react-helmet-async'
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 export default function Home(props) {
   return (
@@ -14,5 +14,5 @@ export default function Home(props) {
       <h1>Home</h1>
       {/* <p>{JSON.stringify(props, null, 2)}</p> */}
     </>
-  )
+  );
 }
