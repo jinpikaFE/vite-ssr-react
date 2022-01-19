@@ -1,7 +1,7 @@
 const { defineConfig } = require('vite')
 const react = require('@vitejs/plugin-react')
 const viteSSR = require('vite-ssr/plugin')
-const api = require('../node-server/api')
+const api = require('./node-server/api')
 
 module.exports = defineConfig({
   server: {
@@ -17,6 +17,9 @@ module.exports = defineConfig({
         // detected because this is a mono repo
         reactStyledComponents: false,
         reactApolloRenderer: false,
+      },
+      build: {
+        keepIndexHtml: true,
       },
     }),
     react(),

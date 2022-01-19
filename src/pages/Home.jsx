@@ -12,7 +12,7 @@ export default function Home(props) {
       </Helmet>
 
       <h1>Home</h1>
-      <p>{JSON.stringify(props, null, 2)}</p>
+      {/* <p>{JSON.stringify(props, null, 2)}</p> */}
     </>
   )
 }
