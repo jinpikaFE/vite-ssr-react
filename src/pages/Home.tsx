@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { renderRoutes, RouteConfig } from 'react-router-config';
 
-export default function Home(props) {
+export default (props: { route: RouteConfig }) => {
   return (
     <>
       <Helmet>
@@ -13,6 +14,7 @@ export default function Home(props) {
 
       <h1>Home</h1>
       {/* <p>{JSON.stringify(props, null, 2)}</p> */}
+      {renderRoutes(props.route.routes)}
     </>
   );
-}
+};

@@ -1,20 +1,27 @@
 {
-  "name": "react-example",
+  "name": "vite-ssr-react",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite-ssr dev --port 1337 --open --force",
-    "dev:spa": "vite dev --port 1337 --open --force",
+    "start": "vite-ssr dev --port 1337 --open --force",
+    "start:spa": "vite dev --port 1337 --open --force",
+    "start:mock": "vite-ssr dev --mode mock",
+    "start:test": "vite-ssr dev --mode test",
     "build": "rm -rf dist && vite-ssr build"
   },
   "dependencies": {
     "@types/react": "^17.0.38",
+    "@types/react-router-config": "^5.0.3",
+    "@types/react-router-dom": "^5.1.8",
+    "ahooks": "^3.1.7",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
+    "less": "^4.1.2",
     "node-fetch": "^2.6.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-helmet-async": "^1.0.9",
-    "react-router-dom": "^5.2.0",
+    "react-router-config": "^5.1.1",
+    "react-router-dom": "^5.3.0",
     "vite-ssr": "^0.15.0"
   },
   "devDependencies": {
